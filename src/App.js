@@ -20,7 +20,7 @@ const clearList = () => {
   };
 
 const removeItem =(id) => {
-showAlert(true, 'Item Removed!','danger')
+showAlert(true, 'Task Removed!','danger')
 setList(list.filter((item) => item.id !== id))
 
 }
@@ -39,7 +39,7 @@ e.preventDefault()
 console.log('hello')
 if(!name)
 {
- showAlert(true,'Please enter Item!','danger')
+ showAlert(true,'Please enter Task!','danger')
 }
 
 else if(name && isEdit)
@@ -67,7 +67,7 @@ setName('');
 
 else
 {
-showAlert(true,'Item added!','success')
+showAlert(true,'Task added!','success')
 const newItem = {id: new Date().getTime().toString(), title: name }
 setList([...list,newItem])
 setName('')
@@ -81,12 +81,12 @@ setName('')
 <section className = "section-center">
 <form className = 'grocery-form' onSubmit = {handleSubmit}>
 {alert.show && <Alert {...alert} removeAlert={showAlert}  />}
-<h3>Grocery Bud</h3>
+<h3>Task Tracker</h3>
 <div className='form-control'>
           <input
             type='text'
             className='grocery'
-            placeholder='e.g. eggs'
+            placeholder='Enter any task'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
